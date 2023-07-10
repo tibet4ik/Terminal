@@ -1,0 +1,64 @@
+Первая часть первого  ДЗ  ))
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir new (в текущей директории)
+3) Зайти в папку - cd new
+4) Создать 3 папки -  mkdir new1 new2 new3
+5) Зайти в любоую папку - cd new3
+6) Создать 5 файлов (3 txt, 2 json) - touch f1.txt f2.txt f3.txt f4.json f5.json
+7) Создать 3 папки - mkdir new4 new5 new6
+8. Вывести список содержимого папки - ls -la
+9) + Открыть любой txt файл - cat f2.txt
+10) + написать туда что-нибудь, любой текст. - cat > f2.txt 1)Apple 2)Grape 3)Limon 4)Bannana 5)Cherry
+11) + сохранить и выйти. - CTRL + C
+12) Выйти из папки на уровень выше - cd..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv new3/f4.json new2/f4.json
+mv new3/f5.json new2/f5.json
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp new3/f1.txt new2/f1.txt
+cp new3/f2.txt new2/f2.txt
+15) Найти файл по имени
+find -name f1.txt
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+tail -f new3/f2.txt
+17) вывести несколько первых строк из текстового файла
+head -n 2 new3/f2.txt
+18) вывести несколько последних строк из текстового файла
+tail -n 2 new3/f2.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less new3/f2.txt (Q - для выхода)
+20) вывести дату и время
+date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5006/terminal-hw-request
+curl http://162.55.220.72:5006/terminal-hw-request
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+nano script.sh (создаем файл и открываем для редактирования)
+#!/bin/bash
+echo "The current directory is:"
+pwd
+echo "Go to folder:"
+cd new
+echo "Create 3 folders:"
+mkdir new1 new2 new3
+echo "Go to any folder:"
+cd new
+echo "Create 5 files:"
+touch f1.txt f2.txt f3.txt f4.json f5.json
+echo "Create 3 folders:"
+mkdir new4 new5 new6
+echo "List the contents of a folder:"
+- ls -la
+echo "move any 2 files you created to any other folder:"
+mv new3/f4.json new2/f4.json
+mv new3/f5.json new2/f5.json
+CTR O (Сохраняем)
+Enter
+CTR X (Выходим)
+Bash script.sh (Выполняем созданный файл)
